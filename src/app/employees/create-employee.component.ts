@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Departement } from '../models/departement.mode';
+import { Employee } from '../models/employee.model';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker'
 
 
@@ -18,6 +19,19 @@ export class CreateEmployeeComponent implements OnInit {
       { id: 2, name: 'Help Desk' },
       { id: 3, name: 'HR' },
     ];
+
+    employee : Employee = {
+      id:null,
+      name: null,
+      gender: null,
+      phoneNumber: null,
+      contactPreference: null,
+      email: null,
+      dateOfBirth: null,
+      department: null,
+      isActive:null,
+      photoPath: null
+    };
 
 
   constructor() {
