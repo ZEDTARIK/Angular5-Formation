@@ -4,14 +4,13 @@ import { Departement } from '../models/departement.mode';
 import { Employee } from '../models/employee.model';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker'
 
-
 @Component({
   selector: 'app-create-employee',
   templateUrl: './create-employee.component.html',
   styleUrls: ['./create-employee.component.css']
 })
 export class CreateEmployeeComponent implements OnInit {
-  previewPhoto  = false;
+  previewPhoto = false;
   datePickerConfig: Partial<BsDatepickerConfig>;
   Departements: Departement[] =
     [
@@ -20,18 +19,20 @@ export class CreateEmployeeComponent implements OnInit {
       { id: 3, name: 'HR' },
     ];
 
-    employee : Employee = {
-      id:null,
-      name: null,
-      gender: null,
-      phoneNumber: null,
-      contactPreference: null,
-      email: null,
-      dateOfBirth: null,
-      department: null,
-      isActive:null,
-      photoPath: null
-    };
+  employee: Employee = {
+    id: null,
+    name: null,
+    gender: null,
+    phoneNumber: null,
+    contactPreference: null,
+    email: null,
+    dateOfBirth: null,
+    department: '-1',
+    isActive: null,
+    photoPath: null,
+    password: null,
+    confirmPassword: null
+  };
 
 
   constructor() {
