@@ -101,9 +101,13 @@
         <img [src]="employee.photoPath" height="200" width="200" *ngIf="previewPhoto" />
       </div>
 
+      <div ngModelGroup="passwordGroup">
+
+      
+
             <div class="form-group" [class.has-error]="password.touched && password.invalid">
               <label for="password" class="control-label">Password</label>
-              <input id="password" required type="text" class="form-control" name="password" [(ngModel)]="employee.password"
+              <input (input)="confirmPassword.control.updateValueAndValidity()" id="password" required type="text" class="form-control" name="password" [(ngModel)]="employee.password"
                 #password="ngModel">
               <span class="help-block" *ngIf="password.touched && password.errors?.required">
                 Password is required
@@ -121,7 +125,9 @@
                 Password and Confirm Password does not match
               </span>
             </div>
-            
+      
+      </div>
+
     </div>
     <div class="panel-footer">
       <button type="submit" class="btn btn-primary" [disabled]="employeeForm.invalid"> Save </button>
