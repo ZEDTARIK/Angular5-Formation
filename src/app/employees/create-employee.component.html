@@ -46,11 +46,11 @@
         <label for="gender">Gender</label>
         <div class="form-control">
           <label class="radio-inline">
-            <input required type="radio" name="gender" value="male" #gender="ngModel" [(ngModel)]="employee.gender">
+            <input required type="radio" name="gender" value="Male" #gender="ngModel" [(ngModel)]="employee.gender">
             Male
           </label>
           <label class="radio-inline">
-            <input type="radio" name="gender" value="female" #gender="ngModel" [(ngModel)]="employee.gender"> Female
+            <input type="radio" name="gender" value="Female" #gender="ngModel" [(ngModel)]="employee.gender"> Female
           </label>
         </div>
         <span *ngIf="gender.errors?.required" class="help-block">Field is Required</span>
