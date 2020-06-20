@@ -6,7 +6,7 @@ import { Employee } from '../models/employee.model';
 })
 export class EmployeeService {
 
-  private listEmployee : Employee[] = [
+  private listEmployee: Employee[] = [
     {
       id: 1,
       name: 'Mark',
@@ -14,7 +14,7 @@ export class EmployeeService {
       contactPreference: 'Email',
       email: 'mark@pragimtech.com',
       dateOfBirth: new Date('10/25/1988'),
-      department: 'IT',
+      department: '3',
       isActive: true,
       photoPath: 'assets/Images/mark.png'
     },
@@ -25,7 +25,7 @@ export class EmployeeService {
       contactPreference: 'Phone',
       phoneNumber: 2345978640,
       dateOfBirth: new Date('11/20/1979'),
-      department: 'HR',
+      department: '2',
       isActive: true,
       photoPath: 'assets/Images/mary.png'
     },
@@ -36,7 +36,7 @@ export class EmployeeService {
       contactPreference: 'Phone',
       phoneNumber: 5432978640,
       dateOfBirth: new Date('3/25/1976'),
-      department: 'IT',
+      department: '1',
       isActive: false,
       photoPath: 'assets/Images/john.png'
     },
@@ -44,7 +44,11 @@ export class EmployeeService {
 
   constructor() { }
 
-  getEmployees() : Employee[] {
+  getEmployees(): Employee[] {
     return this.listEmployee;
+  }
+
+  saveEmployee(employee: Employee) {
+    this.listEmployee.push(employee);
   }
 }
