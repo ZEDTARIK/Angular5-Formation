@@ -11,6 +11,7 @@ import { ConfirmEqualValidatorDirective } from './CustomeValidations/email-valid
 import { AppComponent } from './app.component';
 import { ListEmployeesComponent } from './employees/list-employees.component';
 import { CreateEmployeeComponent } from './employees/create-employee.component';
+import { DisplayEmployeeComponent } from './employees/display-employee.component';
 
 const appRouter : Routes = [
   {path :'list', component: ListEmployeesComponent},
@@ -24,7 +25,8 @@ const appRouter : Routes = [
     ListEmployeesComponent,
     CreateEmployeeComponent,
     SelectedRequiredValidatorDirective,
-    ConfirmEqualValidatorDirective
+    ConfirmEqualValidatorDirective,
+    DisplayEmployeeComponent
   ],
   imports: [
     BrowserModule,
