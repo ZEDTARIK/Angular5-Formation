@@ -8,7 +8,15 @@ import { Employee } from '../models/employee.model';
 })
 export class DisplayEmployeeComponent implements OnInit {
 
-  @Input() employee: Employee;
+  private _employee: Employee;
+
+  @Input() 
+  set employee(val: Employee) {
+    this._employee = val;
+  }
+  get employee() : Employee {
+    return this._employee;
+  }
 
   constructor() { }
 
