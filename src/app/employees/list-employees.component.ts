@@ -12,12 +12,16 @@ export class ListEmployeesComponent implements OnInit {
   employees: Employee[] = [];
   employeeToDispaly: Employee;
   private arrayIndex = 1;
-
+  dataFromChild : Employee;
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
     this.employees = this.employeeService.getEmployees();
     this.employeeToDispaly = this.employees[0];
+  }
+
+  handleNotify(eventEmitter: Employee) {
+    this.dataFromChild = eventEmitter;
   }
 
   nextEmployee(): void {
@@ -29,5 +33,7 @@ export class ListEmployeesComponent implements OnInit {
       this.arrayIndex = 1;
     }
   }
+
+  
 
 }
