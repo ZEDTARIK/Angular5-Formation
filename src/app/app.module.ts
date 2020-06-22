@@ -12,10 +12,12 @@ import { AppComponent } from './app.component';
 import { ListEmployeesComponent } from './employees/list-employees.component';
 import { CreateEmployeeComponent } from './employees/create-employee.component';
 import { DisplayEmployeeComponent } from './employees/display-employee.component';
+import { DetailEmployeeComponent } from './employees/detail-employee.component';
 
 const appRouter : Routes = [
   {path :'list', component: ListEmployeesComponent},
   {path :'create', component: CreateEmployeeComponent},
+  { path: 'employees/:id', component: DetailEmployeeComponent },
   {path: '', redirectTo:'/list', pathMatch: 'full'}
 ];
 
@@ -26,7 +28,8 @@ const appRouter : Routes = [
     CreateEmployeeComponent,
     SelectedRequiredValidatorDirective,
     ConfirmEqualValidatorDirective,
-    DisplayEmployeeComponent
+    DisplayEmployeeComponent,
+    DetailEmployeeComponent
   ],
   imports: [
     BrowserModule,
