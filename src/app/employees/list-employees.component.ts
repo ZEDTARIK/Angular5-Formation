@@ -9,11 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-employees.component.css']
 })
 export class ListEmployeesComponent implements OnInit {
-
+  
+  searchTxt :string;
   employees: Employee[] = [];
   employeeToDispaly: Employee;
   private arrayIndex = 1;
   dataFromChild : Employee;
+  
   constructor(private employeeService: EmployeeService, private _route: Router) { }
 
   ngOnInit() {

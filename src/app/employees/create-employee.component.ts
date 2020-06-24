@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Departement } from '../models/departement.mode';
 import { Employee } from '../models/employee.model';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker'
@@ -12,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-employee.component.css']
 })
 export class CreateEmployeeComponent implements OnInit {
+  
   previewPhoto = false;
   datePickerConfig: Partial<BsDatepickerConfig>;
   Departements: Departement[] =

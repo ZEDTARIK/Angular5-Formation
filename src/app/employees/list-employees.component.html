@@ -6,8 +6,10 @@
     </span>
 </div>
 
-
-<div *ngFor="let employee of employees">
+<div class="form-group">
+  <input [(ngModel)]="searchTxt" type="text" class="form-control" placeholder="Searching By Name" style="width: 300px;">
+</div>
+<div *ngFor="let employee of employees | employeeFilter:searchTxt">
   <div class="pointerCursor" (click)="rediretToDetailEmployee(employee.id)">
       <app-display-employee [employee]="employee" (notify)="handleNotify($event)">
       </app-display-employee>
