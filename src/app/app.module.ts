@@ -14,11 +14,11 @@ import { CreateEmployeeComponent } from './employees/create-employee.component';
 import { DisplayEmployeeComponent } from './employees/display-employee.component';
 import { DetailEmployeeComponent } from './employees/detail-employee.component';
 
-const appRouter : Routes = [
-  {path :'list', component: ListEmployeesComponent},
-  {path :'create', component: CreateEmployeeComponent},
-  { path: 'employees/:id', component: DetailEmployeeComponent },
-  {path: '', redirectTo:'/list', pathMatch: 'full'}
+const appRouter: Routes = [
+  { path: 'list', component: ListEmployeesComponent },
+  { path: 'create', component: CreateEmployeeComponent },
+  { path: 'employee/:id', component: DetailEmployeeComponent },
+  { path: '', redirectTo: '/list', pathMatch: 'full' }
 ];
 
 @NgModule({

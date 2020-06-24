@@ -37,7 +37,7 @@ export class ListEmployeesComponent implements OnInit {
 
 
   rediretToDetailEmployee(employeeId: number) {
-    this._route.navigate(['/employees', employeeId]);
+    this._route.navigate(['/employee', employeeId]);
   }
 
   
