@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from './employee.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Employee } from '../models/employee.model';
 
 @Component({
@@ -10,13 +10,27 @@ import { Employee } from '../models/employee.model';
 })
 export class DetailEmployeeComponent implements OnInit {
 
+  private _id : number;
   employee: Employee;
   constructor(private employeeService: EmployeeService,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
-    const id = +this.activatedRoute.snapshot.paramMap.get('id');
-    this.employee = this.employeeService.getEmployeeById(id);
+    this.activatedRoute.paramMap.subscribe((params) => {
+      this._id  = +params.get('id');
+      this.employee = this.employeeService.getEmployeeById(this._id);
+    });
+    
+  }
+
+  viewNextEmployee() {
+    if(this._id < 3){
+      this._id++;
+    } else {
+      this._id = 1;
+    }
+    this.router.navigate(['/employee', this._id]);
   }
 
 }
