@@ -14,6 +14,7 @@ import { CreateEmployeeComponent } from './employees/create-employee.component';
 import { DisplayEmployeeComponent } from './employees/display-employee.component';
 import { DetailEmployeeComponent } from './employees/detail-employee.component';
 import { EmployeeFilterPipe } from './CustomPipes/filterEmployee.pipe';
+import { EmployeeService } from './employees/employee.service';
 
 const appRouter: Routes = [
   { path: 'list', component: ListEmployeesComponent },
@@ -39,7 +40,7 @@ const appRouter: Routes = [
     FormsModule,
     BsDatepickerModule.forRoot()
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

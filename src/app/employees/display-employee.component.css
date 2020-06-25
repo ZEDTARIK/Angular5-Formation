@@ -6,3 +6,7 @@
     display: flex;
     align-items: center;
 }
+
+.buttton.btn{
+    width: 60px;
+}

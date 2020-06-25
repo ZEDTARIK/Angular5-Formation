@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Employee } from '../models/employee.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-display-employee',
@@ -11,26 +11,23 @@ export class DisplayEmployeeComponent implements OnInit {
 
   private selectedEmployee: number;
   private _employee: Employee;
-
-  @Input() 
+  @Input()
   set employee(val: Employee) {
     this._employee = val;
   }
-  get employee() : Employee {
+  get employee(): Employee {
     return this._employee;
   }
 
-  @Output() notify: EventEmitter<Employee> = new EventEmitter<Employee>();
-  
-  handleClick() {
-    //this.notify.emit(this.employee);
-  }
-
-
-  constructor(private activatedRouter: ActivatedRoute) { }
+  constructor(private activatedRouter: ActivatedRoute,
+    private _route: Router) { }
 
   ngOnInit() {
     this.selectedEmployee = +this.activatedRouter.snapshot.paramMap.get('id');
   }
-  
+
+  rediretToDetailEmployee(employeeId: number) {
+    this._route.navigate(['/employee', employeeId]);
+  }
+
 }

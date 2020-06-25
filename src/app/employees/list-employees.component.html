@@ -1,24 +1,10 @@
-
-<div *ngIf="dataFromChild">
-    <label style="color: steelblue;"> Pass Data From Child Componenet to Parent : </label>
-    <span style="color: chocolate;">
-    {{ dataFromChild?.name }} 
-    </span>
-</div>
-
 <div class="form-group">
-  <input [(ngModel)]="searchTxt" type="text" class="form-control" placeholder="Searching By Name" style="width: 300px;">
+  <label for="">**Searching By Name**</label>
+  <input [(ngModel)]="searchTxt" type="text" class="form-control" placeholder="Searching By Name">
 </div>
 <div *ngFor="let employee of employees | employeeFilter:searchTxt">
-  <div class="pointerCursor" (click)="rediretToDetailEmployee(employee.id)">
-      <app-display-employee [employee]="employee" (notify)="handleNotify($event)">
-      </app-display-employee>
+  <div class="pointerCursor">
+    <app-display-employee [employee]="employee">
+    </app-display-employee>
   </div>
 </div>
-
-<!--
-<button (click)="nextEmployee()" class="btn btn-primary btn-sm">Next Employee</button>
-<br />
-<br />
-<app-display-employee [employee]="employeeToDispaly"></app-display-employee>
--->

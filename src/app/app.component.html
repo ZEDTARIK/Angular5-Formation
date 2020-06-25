@@ -9,7 +9,7 @@
   <nav class="navbar navbar-inverse">
     <a class="navbar-brand" routerLink="/list">Angular</a>
     <ul class="nav navbar-nav">
-      <li class="">
+      <li>
         <a routerLink="/list" routerActive="list">List Employee</a>
       </li>
       <li>
@@ -17,7 +17,8 @@
       </li>
     </ul>
   </nav>
-
+  <!-- Bind to showLoadingIndicator property in the component class -->
+  <div *ngIf="showLoadingIndicator" class="spinner"></div>
   <router-outlet></router-outlet>
 
 </div>
