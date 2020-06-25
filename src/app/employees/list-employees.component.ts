@@ -21,4 +21,8 @@ export class ListEmployeesComponent implements OnInit {
     this.employeeToDispaly = this.employees[0];
   }
 
+  trackByEmpId(index: number, employee: any): string {
+    return employee.id;
+  }
+
 }

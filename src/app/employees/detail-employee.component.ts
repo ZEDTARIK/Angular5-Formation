@@ -21,9 +21,7 @@ export class DetailEmployeeComponent implements OnInit {
       this._id  = +params.get('id');
       this.employee = this.employeeService.getEmployeeById(this._id);
     });
-    
   }
-
   viewNextEmployee() {
     if(this._id < 3){
       this._id++;

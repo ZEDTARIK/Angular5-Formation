@@ -2,7 +2,7 @@
   <label for="">**Searching By Name**</label>
   <input [(ngModel)]="searchTxt" type="text" class="form-control" placeholder="Searching By Name">
 </div>
-<div *ngFor="let employee of employees | employeeFilter:searchTxt">
+<div *ngFor="let employee of employees; trackBy:trackByEmpId | employeeFilter:searchTxt">
   <div class="pointerCursor">
     <app-display-employee [employee]="employee">
     </app-display-employee>
